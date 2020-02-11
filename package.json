@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/E1FANG/Touch-UI/issues"
   },
-  "homepage": "https://github.com/E1FANG/Touch-UI#readme"
+  "homepage": "https://github.com/E1FANG/Touch-UI#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
