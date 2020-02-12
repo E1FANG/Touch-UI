@@ -1,9 +1,21 @@
 <template>
-  <button class="t-button">按钮</button>
+  <button class="t-button" :class="{[`icon-${iconPosition}`] : true}">
+    <svg class="icon" v-if="icon">
+      <use :xlink:href="`#i-${icon}`" />
+    </svg>
+    <div class="content">
+      <slot />
+    </div>
+  </button>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["icon", "iconPosition"],
+  mounted() {
+    console.log(`${this.iconPosition} '+' ${new Date()}`);
+  }
+};
 </script>
 
 <style lang="scss">
@@ -14,6 +26,10 @@ export default {};
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background: var(--button-bg);
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  vertical-align: middle;
   &:hover {
     border-color: var(--border-color-hover);
   }
@@ -22,6 +38,24 @@ export default {};
   }
   &:focus {
     outline: none;
+  }
+  > .content {
+    line-height: var(--button-height);
+    order: 2;
+  }
+  > .icon {
+    order: 1;
+    margin-right: 0.1em;
+  }
+  &.icon-right {
+    > .content {
+      order: 1;
+    }
+    > .icon {
+      order: 2;
+      margin-left: 0.1em;
+      margin-right: 0;
+    }
   }
 }
 </style>

@@ -5,6 +5,10 @@
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
   background: var(--button-bg);
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  vertical-align: middle;
 }
 .t-button:hover {
   border-color: var(--border-color-hover);
@@ -14,4 +18,20 @@
 }
 .t-button:focus {
   outline: none;
+}
+.t-button > .content {
+  line-height: var(--button-height);
+  order: 2;
+}
+.t-button > .icon {
+  order: 1;
+  margin-right: 0.1em;
+}
+.t-button.icon-right > .content {
+  order: 1;
+}
+.t-button.icon-right > .icon {
+  order: 2;
+  margin-left: 0.1em;
+  margin-right: 0;
 }
