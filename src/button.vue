@@ -1,8 +1,12 @@
+
 <template>
-  <button class="t-button" :class="{[`icon-${iconPosition}`] : true}">
-    <svg class="icon" v-if="icon">
-      <use :xlink:href="`#i-${icon}`" />
-    </svg>
+  <button
+    class="t-button"
+    :class="{[`icon-${iconPosition}`] : true}"
+    @click="$emit(click)"
+  >
+    <t-icon v-if="icon && !loading" class="icon" :name="icon" />
+    <t-icon v-if="loading" class="loading icon" name="jiazai" />
     <div class="content">
       <slot />
     </div>
@@ -10,22 +14,37 @@
 </template>
 
 <script>
+import Icon from './icon'
 export default {
   // props: ["icon", "iconPosition"]
+  components: {
+    't-icon': Icon
+  },
   props: {
-    icon: {},
+    icon: {
+      type: String,
+      default: ''
+    },
+    loading: {
+      type: Boolean,
+      default: false
+    },
     iconPosition: {
       type: String,
-      default: "left",
+      default: 'left',
       validator(value) {
-        return value === "left" || value === "right";
+        return value === 'left' || value === 'right'
       }
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
+@keyframes spin {
+  0% { transform: rotate(0edg) ;}
+  100% { transform: rotate(360edg); }
+}
 .t-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -63,6 +82,9 @@ export default {
       margin-left: 0.1em;
       margin-right: 0;
     }
+  }
+  .loading{
+    animation: spin 2s infinite linear;
   }
 }
 </style>
