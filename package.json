@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/E1FANG/Touch-UI#readme",
   "alias": {
-    "vue" : "./node_modules/vue/dist/vue.common.js"
+    "vue": "./node_modules/vue/dist/vue.common.js"
   },
   "dependencies": {
     "parcel-bundler": "^1.12.4",

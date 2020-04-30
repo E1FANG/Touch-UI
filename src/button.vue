@@ -1,8 +1,6 @@
 <template>
   <button class="t-button" :class="{[`icon-${iconPosition}`] : true}">
-    <svg class="icon" v-if="icon">
-      <use :xlink:href="`#i-${icon}`" />
-    </svg>
+    <t-icon :name="icon" class="loading"></t-icon>
     <div class="content">
       <slot />
     </div>
@@ -10,15 +8,24 @@
 </template>
 
 <script>
+// import Icon from './icon'
 export default {
-  props: ["icon", "iconPosition"],
-  mounted() {
-    console.log(`${this.iconPosition} '+' ${new Date()}`);
-  }
+  // components:{
+  //   "t-icon":Icon
+  // },
+  props: ["icon", "iconPosition"]
 };
 </script>
 
 <style lang="scss">
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .t-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -56,6 +63,9 @@ export default {
       margin-left: 0.1em;
       margin-right: 0;
     }
+  }
+  .loading {
+    animation: spin 2s infinite linear;
   }
 }
 </style>
