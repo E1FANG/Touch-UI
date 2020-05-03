@@ -1,6 +1,8 @@
 <template>
-  <button class="t-button" :class="{[`icon-${iconPosition}`] : true}">
-    <t-icon v-if="icon" :name="icon"></t-icon>
+  <button class="t-button" :class="{[`icon-${iconPosition}`] : true}"
+    @click="$emit('click')">
+    <t-icon class="icon" v-if="icon && !loading" :name="icon"></t-icon>
+    <t-icon class="loading icon" v-if="loading" name="loading"></t-icon>
     <div class="content">
       <slot />
     </div>
@@ -11,6 +13,10 @@
 export default {
   props: {
     icon:{},
+    loading:{
+      type:Boolean,
+      default:false
+    },
     iconPosition:{
       type:String,
       default:'left',
@@ -23,6 +29,14 @@ export default {
 </script>
 
 <style lang="scss">
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .t-button {
   font-size: var(--font-size);
   height: var(--button-height);
@@ -60,6 +74,9 @@ export default {
       margin-left: 0.1em;
       margin-right: 0;
     }
+  }
+  .loading{
+    animation: spin 1.5s infinite ;
   }
 }
 </style>
