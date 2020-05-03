@@ -1,8 +1,6 @@
 <template>
   <button class="t-button" :class="{[`icon-${iconPosition}`] : true}">
-    <svg class="icon" v-if="icon">
-      <use :xlink:href="`#i-${icon}`" />
-    </svg>
+    <t-icon v-if="icon" :name="icon"></t-icon>
     <div class="content">
       <slot />
     </div>
@@ -11,9 +9,15 @@
 
 <script>
 export default {
-  props: ["icon", "iconPosition"],
-  mounted() {
-    console.log(`${this.iconPosition} '+' ${new Date()}`);
+  props: {
+    icon:{},
+    iconPosition:{
+      type:String,
+      default:'left',
+      validator(value){
+        return value === 'left' || value === 'right'
+      }
+    }
   }
 };
 </script>
