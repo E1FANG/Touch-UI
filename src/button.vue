@@ -1,8 +1,8 @@
 <template>
   <button class="t-button" :class="{[`icon-${iconPosition}`] : true}"
     @click="$emit('click')">
-    <t-icon class="icon" v-if="icon && !loading" :name="icon"></t-icon>
-    <t-icon class="loading icon" v-if="loading" name="loading"></t-icon>
+    <pl-icon class="icon" v-if="icon && !loading" :name="icon"></pl-icon>
+    <pl-icon class="loading icon" v-if="loading" name="loading"></pl-icon>
     <div class="content">
       <slot />
     </div>
@@ -28,7 +28,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @keyframes spin {
   0% {
     transform: rotate(0deg);

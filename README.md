@@ -8,3 +8,7 @@
 ```
 *{box-sizing:border-box}
 ```
+
+```
+启动： npx parcel index.html --no-cache   
+```
