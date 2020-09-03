@@ -1,5 +1,6 @@
 <template>
-    <div class="col" :class="[`col-${span}`]">
+    <div class="col" :class="[span &&`col-${span}`,offset && `offset-${offset}`]"
+        :style="{paddingLeft:gutter/2+'px',paddingRigth:gutter/2+'px'}">
         <slot></slot>
     </div>
 </template>
@@ -10,7 +11,15 @@ export default {
     props:{
         span:{
             type: [Number,String]
-            }
+        },
+        offset:{
+            type:[Number,String]
+        }
+    },
+    data(){
+        return{
+            gutter:0
+        }
     }
 }
 </script>
@@ -28,6 +37,12 @@ export default {
             &.#{$class-prefix}#{$n}{   //#{} 相当于 es6的${} 取花括号里面的值 
                                        // 这里也算是拼接 ： 前缀加后缀
                 width:($n /24) * 100%
+            }
+        }
+        $class-prefix: offset-;          
+        @for $n from 1 to 24 {        
+            &.#{$class-prefix}#{$n}{  
+                margin-left:($n /24) * 100%
             }
         }
     }
