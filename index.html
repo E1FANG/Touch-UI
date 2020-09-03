@@ -36,27 +36,37 @@
   </head>
   <body>
     <div id="app">
+      <t-row>
+        <t-col>1</t-col>
+        <t-col>2</t-col>
+      </t-row>
+      <t-row>
+        <t-col span="2">1</t-col>
+        <t-col span="22">2</t-col>
+      </t-row>
+
+
       <div class="box">
-      <pl-input value="张三" disabled></pl-input>
-      <pl-input value="李四" readonly></pl-input>
-      <pl-input value="何"></pl-input>
+      <t-input value="张三" disabled></t-input>
+      <t-input value="李四" readonly></t-input>
+      <t-input value="何"></t-input>
     </div>
     <div class="box">
-      <pl-input value="陈" @change="inputChange"></pl-input>
+      <t-input value="陈" @change="inputChange"></t-input>
     </div>
     <div class="box">
-      <pl-input value="王五" error="姓名不能少于两个字"></pl-input>
+      <t-input value="王五" error="姓名不能少于两个字"></t-input>
     </div>
       <div class="box">
-        <pl-button icon="setting">
+        <t-button icon="setting">
           按钮
-        </pl-button>
-        <pl-button :loading="loading1" @click="loading1=!loading1"
-          >按钮</pl-button
+        </t-button>
+        <t-button :loading="loading1" @click="loading1=!loading1"
+          >按钮</t-button
         >
-        <pl-button icon="setting" icon-position="right">
+        <t-button icon="setting" icon-position="right">
           按钮
-        </pl-button>
+        </t-button>
         </div>
 
     </div>

@@ -17,7 +17,7 @@
 import Icon from './icon'
 export default {
     components:{Icon},
-    name:"PlayInput",
+    name:"tInput",
     props:{
         value:{
             type:String,
