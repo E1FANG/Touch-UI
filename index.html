@@ -32,13 +32,16 @@
       .box{
         margin: 20px;
       }
+      .col{
+        background: burlywood;
+      }
     </style>
   </head>
   <body>
     <div id="app">
-      <t-row :gutter='10'>
+      <t-row :gutter='10' align="left">
         <t-col span="14" >1</t-col>
-        <t-col span="8" offset="2" >2</t-col>
+        <t-col span="8" >2</t-col>
       </t-row>
 
 

@@ -89,8 +89,14 @@
 .row[data-v-e0cd50] {
   display: flex;
 }
-.col[data-v-59a201] {
-  width: 50%;
+.row.align-left[data-v-e0cd50] {
+  justify-content: flex-start;
+}
+.row.align-center[data-v-e0cd50] {
+  justify-content: center;
+}
+.row.align-right[data-v-e0cd50] {
+  justify-content: flex-end;
 }
 .col.col-1[data-v-59a201] {
   width: 4.1666666667%;

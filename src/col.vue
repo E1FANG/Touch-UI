@@ -38,8 +38,6 @@ export default {
 
 <style lang="scss" scoped>
 .col {
-  width: 50%;
-
   //sass循环用法
   $class-prefix: col-; // classprefix 相当于 前缀
   @for $n from 1 to 24 {

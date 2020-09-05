@@ -12750,18 +12750,28 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: 'tRow',
+  name: "tRow",
   props: {
     gutter: {
       type: [Number, String]
+    },
+    align: {
+      type: String,
+      validator: function validator(value) {
+        return ["left", "center", "right"].includes(value);
+      }
     }
   },
   computed: {
+    rowClass: function rowClass() {
+      var align = this.align;
+      return [align && "align-".concat(align)];
+    },
     rowStyle: function rowStyle() {
       var gutter = this.gutter;
       return {
-        marginLeft: -gutter / 2 + 'px',
-        marginRigth: -gutter / 2 + 'px'
+        marginLeft: -gutter / 2 + "px",
+        marginRigth: -gutter / 2 + "px"
       };
     }
   },
@@ -12788,7 +12798,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "row", style: _vm.rowStyle },
+    { staticClass: "row", class: _vm.rowClass, style: _vm.rowStyle },
     [_vm._t("default")],
     2
   )
