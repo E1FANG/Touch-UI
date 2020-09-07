@@ -29,33 +29,56 @@
       }
     </style>
     <style>
-      .box{
+      .box {
         margin: 20px;
       }
-      .col{
+      .col {
         background: burlywood;
+      }
+      .demo {
+        background: #ddd;
+        border: 1px solid #666;
+        height: 100px;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <t-row :gutter='10' align="left">
-        <t-col span="14" >1</t-col>
-        <t-col span="8" >2</t-col>
+      <t-row :gutter="10">
+        <t-col
+          span="24"
+          :ipad="{span:12}"
+          :narrow-pc="{span:8}"
+        >
+          <div class="demo"></div>
+        </t-col>
+        <t-col
+        span="24"
+        :ipad="{span:12}"
+        :narrow-pc="{span:8}"
+      >
+        <div class="demo"></div>
+      </t-col>
+      <t-col
+      span="24"
+      :ipad="{span:12}"
+      :narrow-pc="{span:8}"
+    >
+      <div class="demo"></div>
+    </t-col>
       </t-row>
 
-
       <div class="box">
-      <t-input value="张三" disabled></t-input>
-      <t-input value="李四" readonly></t-input>
-      <t-input value="何"></t-input>
-    </div>
-    <div class="box">
-      <t-input value="陈" @change="inputChange"></t-input>
-    </div>
-    <div class="box">
-      <t-input value="王五" error="姓名不能少于两个字"></t-input>
-    </div>
+        <t-input value="张三" disabled></t-input>
+        <t-input value="李四" readonly></t-input>
+        <t-input value="何"></t-input>
+      </div>
+      <div class="box">
+        <t-input value="陈" @change="inputChange"></t-input>
+      </div>
+      <div class="box">
+        <t-input value="王五" error="姓名不能少于两个字"></t-input>
+      </div>
       <div class="box">
         <t-button icon="setting">
           按钮
@@ -66,11 +89,10 @@
         <t-button icon="setting" icon-position="right">
           按钮
         </t-button>
-        </div>
-
+      </div>
     </div>
 
-    <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_1635660_ebwjg6o4snp.js"></script>
   </body>
+  <script src="./src/app.js"></script>
+  <script src="//at.alicdn.com/t/font_1635660_ebwjg6o4snp.js"></script>
 </html>
