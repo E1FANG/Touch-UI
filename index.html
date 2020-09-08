@@ -38,12 +38,21 @@
       .demo {
         background: #ddd;
         border: 1px solid #666;
-        height: 100px;
+        min-height: 100px;
       }
     </style>
   </head>
   <body>
     <div id="app">
+      <t-layout style="height:100vh">
+        <t-sider  class="demo">sider</t-sider>
+        <t-layout>
+          <t-header class="demo">header</t-header>
+        <t-content class="demo">content</t-content>
+        <t-footer class="demo">footer</t-footer>
+        </t-layout>
+      </t-layout>
+
       <!-- <t-row :gutter="10">
         <t-col
           span="24"

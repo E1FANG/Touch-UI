@@ -827,3 +827,15 @@
     margin-left: 100%;
 }
 }
+.content[data-v-59ff28] {
+  flex-grow: 1;
+}
+.layout[data-v-25a343] {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  border: 1px solid red;
+}
+.layout.hasSider[data-v-25a343] {
+  flex-direction: row;
+}
