@@ -44,14 +44,41 @@
   </head>
   <body>
     <div id="app">
-      <t-layout style="height:100vh">
+      <t-tabs :selected.sync="thing">
+        <t-tabs-head>
+          <template name="action">
+            <button>设置</button>
+          </template>
+          <t-tabs-item name="people">
+            <t-icon name="settings"></t-icon>人a
+          </t-tabs-item>
+          <t-tabs-item name="thing">
+            物体
+          </t-tabs-item>
+          <t-tabs-item name="money">
+            财经
+          </t-tabs-item>
+        </t-tabs-head>
+        <t-tabs-body>
+          <t-tabs-pane name="people">
+            人-相关
+          </t-tabs-pane>
+          <t-tabs-pane name="thing">
+            物-相关
+          </t-tabs-pane>
+          <t-tabs-pane name="money">
+            财-相关
+          </t-tabs-pane>
+        </t-tabs-body>
+      </t-tabs>
+      <!-- <t-layout style="height:100vh">
         <t-sider  class="demo">sider</t-sider>
         <t-layout>
           <t-header class="demo">header</t-header>
         <t-content class="demo">content</t-content>
         <t-footer class="demo">footer</t-footer>
         </t-layout>
-      </t-layout>
+      </t-layout> -->
 
       <!-- <t-row :gutter="10">
         <t-col

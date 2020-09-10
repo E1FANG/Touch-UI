@@ -13330,6 +13330,354 @@ render._withStripped = true
       
       }
     })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabs/tabs.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "TouchTabs",
+  props: {
+    selected: {
+      type: String,
+      required: true
+    },
+    direction: {
+      type: String,
+      default: 'horizontal',
+      validator: function validator(value) {
+        return ['horizontal', 'vertical'].indexOf(value) >= 0;
+      }
+    }
+  },
+  created: function created() {
+    this.$emit('update:selected', 'xxx');
+  }
+};
+exports.default = _default;
+        var $a5bdc4 = exports.default || module.exports;
+      
+      if (typeof $a5bdc4 === 'function') {
+        $a5bdc4 = $a5bdc4.options;
+      }
+    
+        /* template */
+        Object.assign($a5bdc4, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "tabs" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-a5bdc4",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$a5bdc4', $a5bdc4);
+          } else {
+            api.reload('$a5bdc4', $a5bdc4);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabs/tabs-body.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "TouchTabsBody"
+};
+exports.default = _default;
+        var $29a723 = exports.default || module.exports;
+      
+      if (typeof $29a723 === 'function') {
+        $29a723 = $29a723.options;
+      }
+    
+        /* template */
+        Object.assign($29a723, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "tabs-body" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-29a723",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$29a723', $29a723);
+          } else {
+            api.reload('$29a723', $29a723);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabs/tabs-head.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "TouchTabsHead"
+};
+exports.default = _default;
+        var $198846 = exports.default || module.exports;
+      
+      if (typeof $198846 === 'function') {
+        $198846 = $198846.options;
+      }
+    
+        /* template */
+        Object.assign($198846, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "tabs-head" },
+    [_vm._t("default"), _vm._v(" "), _vm._t("actions")],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-198846",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$198846', $198846);
+          } else {
+            api.reload('$198846', $198846);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabs/tabs-item.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "TouchTabsItem",
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
+};
+exports.default = _default;
+        var $6cc80d = exports.default || module.exports;
+      
+      if (typeof $6cc80d === 'function') {
+        $6cc80d = $6cc80d.options;
+      }
+    
+        /* template */
+        Object.assign($6cc80d, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "tabs-item" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-6cc80d",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$6cc80d', $6cc80d);
+          } else {
+            api.reload('$6cc80d', $6cc80d);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabs/tabs-pane.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+//
+//
+//
+//
+//
+//
+var _default = {
+  name: "TouchTabsPane"
+};
+exports.default = _default;
+        var $f02245 = exports.default || module.exports;
+      
+      if (typeof $f02245 === 'function') {
+        $f02245 = $f02245.options;
+      }
+    
+        /* template */
+        Object.assign($f02245, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "tabs-pane" }, [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: "data-v-f02245",
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$f02245', $f02245);
+          } else {
+            api.reload('$f02245', $f02245);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
@@ -13355,6 +13703,16 @@ var _layout = _interopRequireDefault(require("./layout/layout.vue"));
 
 var _Sider = _interopRequireDefault(require("./layout/Sider.vue"));
 
+var _tabs = _interopRequireDefault(require("./tabs/tabs.vue"));
+
+var _tabsBody = _interopRequireDefault(require("./tabs/tabs-body.vue"));
+
+var _tabsHead = _interopRequireDefault(require("./tabs/tabs-head.vue"));
+
+var _tabsItem = _interopRequireDefault(require("./tabs/tabs-item.vue"));
+
+var _tabsPane = _interopRequireDefault(require("./tabs/tabs-pane.vue"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _vue.default.component("t-button", _button.default);
@@ -13377,6 +13735,16 @@ _vue.default.component("t-layout", _layout.default);
 
 _vue.default.component("t-sider", _Sider.default);
 
+_vue.default.component("t-tabs", _tabs.default);
+
+_vue.default.component("t-tabs-body", _tabsBody.default);
+
+_vue.default.component("t-tabs-head", _tabsHead.default);
+
+_vue.default.component("t-tabs-item", _tabsItem.default);
+
+_vue.default.component("t-tabs-pane", _tabsPane.default);
+
 new _vue.default({
   el: "#app",
   data: {
@@ -13388,7 +13756,7 @@ new _vue.default({
     }
   }
 });
-},{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./icon.vue":"src/icon.vue","./input.vue":"src/input.vue","./row.vue":"src/row.vue","./col.vue":"src/col.vue","./layout/content.vue":"src/layout/content.vue","./layout/footer.vue":"src/layout/footer.vue","./layout/header.vue":"src/layout/header.vue","./layout/layout.vue":"src/layout/layout.vue","./layout/Sider.vue":"src/layout/Sider.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./button.vue":"src/button.vue","./icon.vue":"src/icon.vue","./input.vue":"src/input.vue","./row.vue":"src/row.vue","./col.vue":"src/col.vue","./layout/content.vue":"src/layout/content.vue","./layout/footer.vue":"src/layout/footer.vue","./layout/header.vue":"src/layout/header.vue","./layout/layout.vue":"src/layout/layout.vue","./layout/Sider.vue":"src/layout/Sider.vue","./tabs/tabs.vue":"src/tabs/tabs.vue","./tabs/tabs-body.vue":"src/tabs/tabs-body.vue","./tabs/tabs-head.vue":"src/tabs/tabs-head.vue","./tabs/tabs-item.vue":"src/tabs/tabs-item.vue","./tabs/tabs-pane.vue":"src/tabs/tabs-pane.vue"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -13416,7 +13784,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "11708" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "4796" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
