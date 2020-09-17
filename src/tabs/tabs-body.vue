@@ -6,7 +6,8 @@
 
 <script>
 export default {
-    name:"TouchTabsBody"
+    name:"TouchTabsBody",
+    inject:['eventBus'],
 }
 </script>
 

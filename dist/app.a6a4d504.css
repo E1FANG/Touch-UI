@@ -839,3 +839,23 @@
 .layout.hasSider[data-v-25a343] {
   flex-direction: row;
 }
+.tabs-head[data-v-198846] {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  border: 1px solid red;
+}
+.tabs-head > .actions-wrapper[data-v-198846] {
+  margin-left: auto;
+}
+.tabs-item[data-v-6cc80d] {
+  flex-shrink: 0;
+  padding: 0 1em;
+}
+.tabs-item.active[data-v-6cc80d] {
+  background: red;
+}
+.tabs-pane.active[data-v-f02245] {
+  background: red;
+}

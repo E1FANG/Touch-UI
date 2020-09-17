@@ -34,6 +34,7 @@ Vue.component("t-tabs-pane", TabsPane)
 new Vue({
   el: "#app",
   data:{
+    selectedTab:'thing',
     loading1:false
   },
   methods:{

@@ -1,16 +1,33 @@
 <template>
-    <div class="tabs-head">
-        <slot></slot>
-        <slot name="actions"></slot>
+  <div class="tabs-head">
+    <slot></slot>
+    <div class="actions-wrapper">
+      <slot name="actions"></slot>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name:"TouchTabsHead"
-}
+  name: "TouchTabsHead",
+  inject: ["eventBus"],
+  created() {
+    console.log(this.eventBus);
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-    .tabs-head{}
+$tab-height: 40px;
+.tabs-head {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: $tab-height;
+  border: 1px solid red;
+  > .actions-wrapper {
+      //设置margin-left auto，action就自动在最右边
+    margin-left: auto;
+  }
+}
 </style>
