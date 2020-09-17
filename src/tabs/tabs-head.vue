@@ -26,12 +26,13 @@ export default {
 <style lang="scss" scoped>
 $tab-height: 40px;
 $blue: blue;
+$borderColor:#ddd;
 .tabs-head {
   display: flex;
   justify-content: flex-start;
   position: relative;
   height: $tab-height;
-  // border: 1px solid red;
+  border-bottom: 1px solid $borderColor;
   > .line {
     position: absolute;
     bottom: 0;
@@ -42,6 +43,9 @@ $blue: blue;
   > .actions-wrapper {
     //设置margin-left auto，action就自动在最右边
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 </style>
