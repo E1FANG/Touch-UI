@@ -844,13 +844,12 @@
   justify-content: flex-start;
   position: relative;
   height: 40px;
-  border: 1px solid red;
 }
 .tabs-head > .line[data-v-198846] {
   position: absolute;
   bottom: 0;
-  width: 100px;
   border-bottom: 1px solid blue;
+  transition: all 300ms;
 }
 .tabs-head > .actions-wrapper[data-v-198846] {
   margin-left: auto;

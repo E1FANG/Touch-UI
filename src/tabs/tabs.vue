@@ -34,9 +34,9 @@ export default {
     mounted(){
         this.$children.forEach(vm=>{
             if(vm.$options.name === 'TouchTabsHead'){
-                vm.$children.forEach(item=>{
-                    if(item.$options.name === 'TouchTabsItem' && item.name === this.selected){
-                       this.eventBus.$emit('update:selected', this.selected,item)
+                vm.$children.forEach(childVm=>{
+                    if(childVm.$options.name === 'TouchTabsItem' && childVm.name === this.selected){
+                       this.eventBus.$emit('update:selected', this.selected,childVm)
                     }
                 })
             }

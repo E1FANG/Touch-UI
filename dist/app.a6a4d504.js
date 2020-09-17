@@ -13378,9 +13378,9 @@ var _default = {
 
     this.$children.forEach(function (vm) {
       if (vm.$options.name === 'TouchTabsHead') {
-        vm.$children.forEach(function (item) {
-          if (item.$options.name === 'TouchTabsItem' && item.name === _this.selected) {
-            _this.eventBus.$emit('update:selected', _this.selected, item);
+        vm.$children.forEach(function (childVm) {
+          if (childVm.$options.name === 'TouchTabsItem' && childVm.name === _this.selected) {
+            _this.eventBus.$emit('update:selected', _this.selected, childVm);
           }
         });
       }
@@ -13517,12 +13517,22 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   name: "TouchTabsHead",
   inject: ["eventBus"],
-  created: function created() {
-    this.eventBus.$on('update:selected', function (item) {
-      console.log(item);
+  mounted: function mounted() {
+    var _this = this;
+
+    this.eventBus.$on("update:selected", function (item, vm) {
+      var _vm$$el$getBoundingCl = vm.$el.getBoundingClientRect(),
+          width = _vm$$el$getBoundingCl.width,
+          height = _vm$$el$getBoundingCl.height,
+          top = _vm$$el$getBoundingCl.top,
+          left = _vm$$el$getBoundingCl.left;
+
+      _this.$refs.line.style.width = "".concat(width, "px");
+      _this.$refs.line.style.transform = "translateX(".concat(left - 21, "px)");
     });
   }
 };
