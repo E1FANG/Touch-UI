@@ -46,10 +46,10 @@
     <div id="app">
       <t-tabs :selected.sync="selectedTab">
         <t-tabs-head>
-          <template name="actions">
+          <template slot="actions">
             <button>设置</button>
           </template>
-          <t-tabs-item name="people">
+          <t-tabs-item name="people" disabled>
             <t-icon name="setting"></t-icon>人a
           </t-tabs-item>
           <t-tabs-item name="thing">
