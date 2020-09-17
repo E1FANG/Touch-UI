@@ -32,7 +32,16 @@ export default {
         }
     },
     mounted(){
-        this.eventBus.$emit('update:selected', this.selected)
+        this.$children.forEach(vm=>{
+            if(vm.$options.name === 'TouchTabsHead'){
+                vm.$children.forEach(item=>{
+                    if(item.$options.name === 'TouchTabsItem' && item.name === this.selected){
+                       this.eventBus.$emit('update:selected', this.selected,item)
+                    }
+                })
+            }
+        })
+        
     }
 }
 </script>

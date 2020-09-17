@@ -13374,7 +13374,17 @@ var _default = {
     };
   },
   mounted: function mounted() {
-    this.eventBus.$emit('update:selected', this.selected);
+    var _this = this;
+
+    this.$children.forEach(function (vm) {
+      if (vm.$options.name === 'TouchTabsHead') {
+        vm.$children.forEach(function (item) {
+          if (item.$options.name === 'TouchTabsItem' && item.name === _this.selected) {
+            _this.eventBus.$emit('update:selected', _this.selected, item);
+          }
+        });
+      }
+    });
   }
 };
 exports.default = _default;
@@ -13506,11 +13516,14 @@ exports.default = void 0;
 //
 //
 //
+//
 var _default = {
   name: "TouchTabsHead",
   inject: ["eventBus"],
   created: function created() {
-    console.log(this.eventBus);
+    this.eventBus.$on('update:selected', function (item) {
+      console.log(item);
+    });
   }
 };
 exports.default = _default;
@@ -13531,6 +13544,8 @@ exports.default = _default;
     { staticClass: "tabs-head" },
     [
       _vm._t("default"),
+      _vm._v(" "),
+      _c("div", { ref: "line", staticClass: "line" }),
       _vm._v(" "),
       _c("div", { staticClass: "actions-wrapper" }, [_vm._t("actions")], 2)
     ],
@@ -13585,7 +13600,7 @@ exports.default = void 0;
 //
 var _default = {
   name: "TouchTabsItem",
-  inject: ['eventBus'],
+  inject: ["eventBus"],
   props: {
     disabled: {
       type: Boolean,
@@ -13611,7 +13626,7 @@ var _default = {
   created: function created() {
     var _this = this;
 
-    this.eventBus.$on('update:selected', function (name) {
+    this.eventBus.$on("update:selected", function (name) {
       if (name === _this.name) {
         _this.active = true;
       } else {
@@ -13621,7 +13636,7 @@ var _default = {
   },
   methods: {
     xxx: function xxx() {
-      this.eventBus.$emit('update:selected', this.name);
+      this.eventBus.$emit("update:selected", this.name, this);
     }
   }
 };
