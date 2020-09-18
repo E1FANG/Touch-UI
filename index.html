@@ -43,8 +43,22 @@
     </style>
   </head>
   <body>
-    <div id="app">
-      <t-tabs :selected.sync="selectedTab">
+    <div id="app" style="padding: 100px  0 0 100px;">
+
+      <t-popover>
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+          <button>点我</button>
+      </t-popover>
+
+      <t-popover>
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+          <button>点我</button>
+      </t-popover>
+      <!-- <t-tabs :selected.sync="selectedTab">
         <t-tabs-head>
           <template slot="actions">
             <button>设置</button>
@@ -70,7 +84,10 @@
             财-相关
           </t-tabs-pane>
         </t-tabs-body>
-      </t-tabs>
+      </t-tabs> -->
+
+
+
       <!-- <t-layout style="height:100vh">
         <t-sider  class="demo">sider</t-sider>
         <t-layout>
@@ -104,7 +121,7 @@
     </t-col>
       </t-row> -->
 
-      <div class="box">
+      <!-- <div class="box">
         <t-input value="张三" disabled></t-input>
         <t-input value="李四" readonly></t-input>
         <t-input value="何"></t-input>
@@ -125,7 +142,7 @@
         <t-button icon="setting" icon-position="right">
           按钮
         </t-button>
-      </div>
+      </div> -->
     </div>
   </body>
   <script src="./src/app.js"></script>

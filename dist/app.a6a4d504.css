@@ -872,7 +872,20 @@
 }
 .tabs-item.disabled[data-v-6cc80d] {
   color: grey;
+  cursor: not-allowed;
 }
 .tabs-pane[data-v-f02245] {
   padding: 1em;
+}
+.popover[data-v-672940] {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+.popover .content-wrapper[data-v-672940] {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  border: 1px solid red;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
