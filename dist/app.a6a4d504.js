@@ -13832,9 +13832,8 @@ exports.default = void 0;
 //
 //
 //
-//
 var _default = {
-  name: "TouchPopover",
+  name: "GuluPopover",
   props: {
     position: {
       type: String,
@@ -13842,12 +13841,51 @@ var _default = {
       validator: function validator(value) {
         return ['top', 'bottom', 'left', 'right'].indexOf(value) >= 0;
       }
+    },
+    trigger: {
+      type: String,
+      default: 'click',
+      validator: function validator(value) {
+        return ['click', 'hover'].indexOf(value) >= 0;
+      }
     }
   },
   data: function data() {
     return {
-      visiable: false
+      visible: false
     };
+  },
+  mounted: function mounted() {
+    if (this.trigger === 'click') {
+      this.$refs.popover.addEventListener('click', this.onClick);
+    } else {
+      this.$refs.popover.addEventListener('mouseenter', this.open);
+      this.$refs.popover.addEventListener('mouseleave', this.close);
+    }
+  },
+  destroyed: function destroyed() {
+    if (this.trigger === 'click') {
+      this.$refs.popover.removeEventListener('click', this.onClick);
+    } else {
+      this.$refs.popover.removeEventListener('mouseenter', this.open);
+      this.$refs.popover.removeEventListener('mouseleave', this.close);
+    }
+  },
+  computed: {
+    openEvent: function openEvent() {
+      if (this.trigger === 'click') {
+        return 'click';
+      } else {
+        return 'mouseenter';
+      }
+    },
+    closeEvent: function closeEvent() {
+      if (this.trigger === 'click') {
+        return 'click';
+      } else {
+        return 'mouseleave';
+      }
+    }
   },
   methods: {
     positionContent: function positionContent() {
@@ -13900,20 +13938,20 @@ var _default = {
     open: function open() {
       var _this = this;
 
-      this.visiable = true;
+      this.visible = true;
       this.$nextTick(function () {
         _this.positionContent();
 
-        document.addEventListener("click", _this.onClickDocument);
+        document.addEventListener('click', _this.onClickDocument);
       });
     },
     close: function close() {
-      this.visiable = false;
-      document.removeEventListener("click", this.onClickDocument);
+      this.visible = false;
+      document.removeEventListener('click', this.onClickDocument);
     },
     onClick: function onClick(event) {
       if (this.$refs.triggerWrapper.contains(event.target)) {
-        if (this.visiable === true) {
+        if (this.visible === true) {
           this.close();
         } else {
           this.open();
@@ -13936,41 +13974,28 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {
-      ref: "popover",
-      staticClass: "popover",
-      on: {
-        click: function($event) {
-          $event.stopPropagation()
-          return _vm.onClick($event)
-        }
-      }
-    },
-    [
-      _vm.visiable
-        ? _c(
-            "div",
-            {
-              ref: "contentWrapper",
-              staticClass: "content-wrapper",
-              class:
-                ((_obj = {}), (_obj["position-" + _vm.position] = true), _obj)
-            },
-            [_vm._t("content")],
-            2
-          )
-        : _vm._e(),
-      _vm._v(" "),
-      _c(
-        "span",
-        { ref: "triggerWrapper", staticStyle: { display: "inline-flex" } },
-        [_vm._t("default")],
-        2
-      )
-    ]
-  )
+  return _c("div", { ref: "popover", staticClass: "popover" }, [
+    _vm.visible
+      ? _c(
+          "div",
+          {
+            ref: "contentWrapper",
+            staticClass: "content-wrapper",
+            class:
+              ((_obj = {}), (_obj["position-" + _vm.position] = true), _obj)
+          },
+          [_vm._t("content", null, { close: _vm.close })],
+          2
+        )
+      : _vm._e(),
+    _vm._v(" "),
+    _c(
+      "span",
+      { ref: "triggerWrapper", staticStyle: { display: "inline-block" } },
+      [_vm._t("default")],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
