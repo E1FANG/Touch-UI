@@ -13829,6 +13829,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   name: "TouchPopover",
   data: function data() {
@@ -13844,9 +13846,21 @@ var _default = {
 
       if (this.visiable === true) {
         this.$nextTick(function () {
+          document.body.appendChild(_this.$refs.contentWrapper);
+
+          var _this$$refs$triggerWr = _this.$refs.triggerWrapper.getBoundingClientRect(),
+              width = _this$$refs$triggerWr.width,
+              height = _this$$refs$triggerWr.height,
+              top = _this$$refs$triggerWr.top,
+              left = _this$$refs$triggerWr.left;
+
+          console.log(width, height, top, left);
+          _this.$refs.contentWrapper.style.left = left + window.scrollX + 'px';
+          _this.$refs.contentWrapper.style.top = top + window.scrollY + 'px';
+
           var eventHandler = function eventHandler() {
             _this.visiable = false;
-            document.removeEventListener('click', eventHandler);
+            document.removeEventListener("click", eventHandler);
           };
 
           document.addEventListener("click", eventHandler);
@@ -13883,22 +13897,14 @@ exports.default = _default;
       _vm.visiable
         ? _c(
             "div",
-            {
-              staticClass: "content-wrapper",
-              on: {
-                click: function($event) {
-                  $event.stopPropagation()
-                }
-              }
-            },
+            { ref: "contentWrapper", staticClass: "content-wrapper" },
             [_vm._t("content")],
             2
           )
         : _vm._e(),
       _vm._v(" "),
-      _vm._t("default")
-    ],
-    2
+      _c("span", { ref: "triggerWrapper" }, [_vm._t("default")], 2)
+    ]
   )
 }
 var staticRenderFns = []
@@ -14045,7 +14051,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "13307" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "13742" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
