@@ -13839,32 +13839,46 @@ var _default = {
     };
   },
   methods: {
-    xxx: function xxx() {
+    positionContent: function positionContent() {
+      document.body.appendChild(this.$refs.contentWrapper);
+
+      var _this$$refs$triggerWr = this.$refs.triggerWrapper.getBoundingClientRect(),
+          width = _this$$refs$triggerWr.width,
+          height = _this$$refs$triggerWr.height,
+          top = _this$$refs$triggerWr.top,
+          left = _this$$refs$triggerWr.left;
+
+      this.$refs.contentWrapper.style.left = left + window.scrollX + 'px';
+      this.$refs.contentWrapper.style.top = top + window.scrollY + 'px';
+    },
+    onClickDocument: function onClickDocument(e) {
+      if (this.$refs.popover && (this.$refs.popover === e.target || this.$refs.contentWrapper.contains(e.target))) {
+        return;
+      }
+
+      this.close();
+    },
+    open: function open() {
       var _this = this;
 
-      this.visiable = !this.visiable;
+      this.visiable = true;
+      this.$nextTick(function () {
+        _this.positionContent();
 
-      if (this.visiable === true) {
-        this.$nextTick(function () {
-          document.body.appendChild(_this.$refs.contentWrapper);
-
-          var _this$$refs$triggerWr = _this.$refs.triggerWrapper.getBoundingClientRect(),
-              width = _this$$refs$triggerWr.width,
-              height = _this$$refs$triggerWr.height,
-              top = _this$$refs$triggerWr.top,
-              left = _this$$refs$triggerWr.left;
-
-          console.log(width, height, top, left);
-          _this.$refs.contentWrapper.style.left = left + window.scrollX + 'px';
-          _this.$refs.contentWrapper.style.top = top + window.scrollY + 'px';
-
-          var eventHandler = function eventHandler() {
-            _this.visiable = false;
-            document.removeEventListener("click", eventHandler);
-          };
-
-          document.addEventListener("click", eventHandler);
-        });
+        document.addEventListener("click", _this.onClickDocument);
+      });
+    },
+    close: function close() {
+      this.visiable = false;
+      document.removeEventListener("click", this.onClickDocument);
+    },
+    onClick: function onClick(event) {
+      if (this.$refs.triggerWrapper.contains(event.target)) {
+        if (this.visiable === true) {
+          this.close();
+        } else {
+          this.open();
+        }
       }
     }
   }
@@ -13885,11 +13899,12 @@ exports.default = _default;
   return _c(
     "div",
     {
+      ref: "popover",
       staticClass: "popover",
       on: {
         click: function($event) {
           $event.stopPropagation()
-          return _vm.xxx($event)
+          return _vm.onClick($event)
         }
       }
     },
