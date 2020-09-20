@@ -30,6 +30,7 @@ export default {
     mounted(){
        this.eventBus.$on('update:selected', name=>{
             if(name!== this.name){
+                //colse
                 this.close()
             }else{
                 this.show()

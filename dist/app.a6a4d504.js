@@ -14160,6 +14160,7 @@ var _default = {
 
     this.eventBus.$on('update:selected', function (name) {
       if (name !== _this.name) {
+        //colse
         _this.close();
       } else {
         _this.show();
