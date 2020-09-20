@@ -973,13 +973,15 @@
   border-radius: 4px;
 }
 .collapseItem > .title[data-v-d8f6a9] {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  margin-left: -1px;
+  margin-right: -1px;
+  min-height: 32px;
   display: flex;
   align-items: center;
-  margin: -1px;
-  margin-bottom: 0px;
-  min-height: 32px;
   padding: 0 8px;
-  border: 1px solid #ddd;
+  background: #f1f1f1;
 }
 .collapseItem:first-child > .title[data-v-d8f6a9] {
   border-top-left-radius: 4px;
@@ -990,5 +992,5 @@
   border-bottom-right-radius: 4px;
 }
 .collapseItem > .content[data-v-d8f6a9] {
-  padding: 0 8px;
+  padding: 8px;
 }
