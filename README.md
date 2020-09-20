@@ -2,7 +2,9 @@
 
 作者：E1FANG
 
-##安装
+## 官网
+地址：[https://e1fang.github.io/Touch-UI/components/collapse.html](https://e1fang.github.io/Touch-UI/components/collapse.html)
+## 安装
 使用本框架前，请在css中开启border-box
 
 ```
