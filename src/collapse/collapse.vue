@@ -4,8 +4,27 @@
     </div>
 </template>
 <script>
+import Vue from 'vue'
 export default {
-    name:"TouchCollapse"
+    name:"TouchCollapse",
+    props:{
+        single:{
+            type:Boolean,
+            defaule:false
+        }
+    },
+    data(){
+        return{
+            eventBus: new Vue()
+        }
+    },
+    provide(){
+        if(this.single){
+            return {
+                eventBus : this.eventBus
+            }
+        }
+    }
 }
 </script>
 
