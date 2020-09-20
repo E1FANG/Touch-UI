@@ -1,0 +1,64 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add -D sass-loader node-sass
+
+PATH: 
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  12.14.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'G:\Vue UI框架\Touch-UI\node_modules\deasync\bin\win32-x64-node-12\deasync.node'
+
+npm manifest: 
+  {
+    "name": "play-ui",
+    "version": "0.0.1",
+    "description": "这是一个UI框架",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "docs:dev": "vuepress dev docs",
+      "docs:build": "vuepress build docs"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/E1FANG/Touch-UI.git"
+    },
+    "keywords": [
+      "vue，ui"
+    ],
+    "author": "E1FANG",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/E1FANG/Touch-UI/issues"
+    },
+    "homepage": "https://github.com/E1FANG/Touch-UI#readme",
+    "alias": {
+      "vue": "./node_modules/vue/dist/vue.common.js"
+    },
+    "dependencies": {
+      "parcel-bundler": "^1.12.4",
+      "vue": "^2.6.12",
+      "vue-hot-reload-api": "^2.3.4"
+    },
+    "devDependencies": {
+      "@vue/component-compiler-utils": "^3.2.0",
+      "parcel-bundler": "^1.12.4",
+      "sass": "^1.26.10",
+      "vue-template-compiler": "^2.6.12",
+      "vuepress": "^1.5.4"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

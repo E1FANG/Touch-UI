@@ -5,8 +5,10 @@
 </template>
 
 <script>
+import './svg'
 export default {
-    props:['name']
+  // name:'TouchIcon',
+  props:['name']
 }
 </script>
 
