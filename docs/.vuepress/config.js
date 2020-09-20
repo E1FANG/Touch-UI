@@ -1,4 +1,5 @@
 module.exports = {
+    base:'/Touch-UI/',
     title: 'Touch UI',
     description: 'Just playing around',
     themeConfig:{
@@ -14,7 +15,13 @@ module.exports = {
         {
           title:'组件',
           children:[
-            '/components/button'
+            '/components/button',
+            '/components/tabs',
+            '/components/input',
+            '/components/grid',
+            '/components/layout',
+            '/components/popover',
+            '/components/collapse'
           ]
         }
       ]

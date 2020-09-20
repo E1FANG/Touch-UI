@@ -6,9 +6,9 @@ sidebarDepth: 2
 #按钮
 
 使用方法
-
-<button-demos></button-demos>
-
+<ClientOnly>
+    <button-demos></button-demos>
+</ClientOnly>
 
 ```javascript
 <t-button icon="settings">按钮</t-button>
